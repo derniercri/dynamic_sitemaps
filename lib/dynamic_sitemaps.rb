@@ -1,7 +1,9 @@
 require "dynamic_sitemaps/rails/engine"
 require "dynamic_sitemaps/sitemap"
 require "dynamic_sitemaps/generator"
+require "dynamic_sitemaps/dynamic_generator"
 require "dynamic_sitemaps/sitemap_generator"
+require "dynamic_sitemaps/dynamic_sitemap_generator"
 require "dynamic_sitemaps/index_generator"
 require "dynamic_sitemaps/sitemap_result"
 require "dynamic_sitemaps/pinger"
@@ -30,7 +32,7 @@ module DynamicSitemaps
 
     # Configure DynamicSitemaps.
     # Defaults:
-    # 
+    #
     #   DynamicSitemaps.configure do |config|
     #     config.path = Rails.root.join("public")
     #     config.folder = "sitemaps"
@@ -39,9 +41,9 @@ module DynamicSitemaps
     #     config.config_path = Rails.root.join("config", "sitemap.rb")
     #     config.per_page = 50_000
     #   end
-    # 
+    #
     # To ping search engines after generating the sitemap:
-    # 
+    #
     #   DynamicSitemaps.configure do |config|
     #     config.search_engine_ping_urls << "http://customsearchengine.com/ping?url=%s" # Default is Google and Bing
     #     config.ping_environments << "staging" # Default is production
